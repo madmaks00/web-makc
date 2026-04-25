@@ -396,139 +396,70 @@
             nav { display: none; }
             .tech-grid { grid-template-columns: 1fr; }
         }
-        .hero-mockup-container {
-            width: 100%;
-            max-width: 1050px;
-            margin: 40px auto 0;
-            perspective: 1200px;
-            z-index: 10;
-        }
 
-        .mockup-window {
-            background: #14171a;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 12px;
-            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.8), 0 0 50px rgba(0, 136, 204, 0.2);
-            overflow: hidden;
-            transform: rotateX(6deg) translateY(0);
+        .hero-mockup-container { width: 100%; max-width: 1100px; margin: 60px auto 0; perspective: 1200px; z-index: 10; }
+        .mockup-app-window {
+            background: #0f1115; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px;
+            box-shadow: 0 40px 80px -20px rgba(0, 0, 0, 0.8), 0 0 60px rgba(99, 102, 241, 0.2);
+            overflow: hidden; transform: rotateX(5deg) translateY(0);
             transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.6s ease;
-            display: flex;
-            flex-direction: column;
-            height: 550px;
-            font-family: 'Segoe UI', sans-serif;
+            display: flex; flex-direction: column; height: 600px;
         }
-
-        .mockup-window:hover {
-            transform: rotateX(0deg) translateY(-10px);
-            box-shadow: 0 40px 80px -15px rgba(0, 0, 0, 0.9), 0 0 70px rgba(0, 136, 204, 0.3);
-        }
-
-        .mockup-header-win {
-            height: 32px;
-            background: #0f1115;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 15px;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            font-size: 0.75rem;
-            color: #888;
-        }
-        .win-controls { display: flex; gap: 15px; align-items: center; }
-
-        .makc-app-body {
-            display: flex;
-            height: calc(100% - 32px);
-        }
-
-        .makc-nav-bar {
-            width: 65px;
-            background: #0f1115;
-            border-right: 1px solid rgba(255,255,255,0.05);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 15px 0;
-            gap: 22px;
-        }
-        
-        .makc-nav-avatar {
-            width: 40px; height: 40px;
-            border-radius: 50%;
-            background: #0088cc;
-            display: flex; align-items: center; justify-content: center;
-            font-weight: bold; font-size: 1.1rem; color: #fff;
-            position: relative;
-        }
-        .makc-nav-avatar::after {
-            content: ''; position: absolute; bottom: -2px; right: -2px;
-            width: 12px; height: 12px; background: #4ade80;
-            border-radius: 50%; border: 3px solid #0f1115;
-        }
-
-        .makc-nav-icon { width: 24px; height: 24px; opacity: 0.5; transition: 0.3s; fill: currentColor;}
-        .makc-nav-icon.active { opacity: 1; color: #0088cc; }
-
-        .makc-sidebar {
-            width: 280px;
-            background: #16191c;
-            border-right: 1px solid rgba(255,255,255,0.05);
-            display: flex;
-            flex-direction: column;
-            padding: 15px;
-        }
-
-        .makc-stories-header { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 1.1rem; margin-bottom: 12px; }
-        .makc-stories-list { display: flex; gap: 12px; margin-bottom: 20px; overflow: hidden; }
-        .makc-story-item { display: flex; flex-direction: column; align-items: center; gap: 4px; }
-        .makc-story-ring {
-            width: 48px; height: 48px; border-radius: 50%;
-            border: 2px solid #ec4899; padding: 2px; display: flex; align-items: center; justify-content: center;
-        }
-        .makc-story-inner { width: 100%; height: 100%; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 600;}
-        .makc-story-name { font-size: 0.7rem; color: #888; }
-
-        .makc-chats-header { display: flex; justify-content: space-between; align-items: center; font-weight: 700; font-size: 1.1rem; margin-bottom: 10px; }
-        .makc-badge { background: #ef4444; color: white; font-size: 0.65rem; padding: 2px 6px; border-radius: 10px; font-weight: 800;}
-        
-        .makc-search-bar { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 8px 12px; display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: #888; margin-bottom: 15px;}
-
-        .makc-chat-list { display: flex; flex-direction: column; gap: 4px; }
-        .makc-chat-item { display: flex; gap: 12px; padding: 10px; border-radius: 8px; cursor: pointer; transition: background 0.2s;}
-        .makc-chat-item.active { background: rgba(0, 136, 204, 0.15); border: 1px solid rgba(0, 136, 204, 0.3); }
-        .makc-chat-avatar { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; color: white; flex-shrink: 0;}
-        .makc-chat-info { display: flex; flex-direction: column; justify-content: center; overflow: hidden; width: 100%;}
-        .makc-chat-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;}
-        .makc-chat-name { font-size: 0.9rem; font-weight: 600; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;}
-        .makc-chat-time { font-size: 0.7rem; color: #666; }
-        .makc-chat-msg { font-size: 0.8rem; color: #888; white-space: nowrap; text-overflow: ellipsis; overflow: hidden;}
-
-        .makc-chat-main { flex: 1; display: flex; flex-direction: column; background: #101216; }
-        
-        .makc-chat-header-main { padding: 12px 20px; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center;}
-        .makc-chat-user { display: flex; align-items: center; gap: 12px; }
-        .makc-chat-user-info h3 { font-size: 1rem; margin: 0; color: #fff;}
-        .makc-chat-user-info p { font-size: 0.75rem; color: #888; margin: 0;}
-        .makc-chat-actions { display: flex; gap: 20px; color: #888;}
-
-        .makc-messages-area { flex: 1; padding: 20px; display: flex; flex-direction: column; gap: 8px; justify-content: flex-end;}
-        
-        .makc-msg-bubble { max-width: 60%; padding: 8px 14px; border-radius: 12px; font-size: 0.9rem; position: relative; animation: floatIn 0.4s ease-out forwards; opacity: 0; transform: translateY(10px); }
-        .makc-msg-bubble.left { background: #22262b; color: #eaeaea; align-self: flex-start; border-bottom-left-radius: 4px; animation-delay: 0.1s;}
-        .makc-msg-bubble.right { background: #0088cc; color: #fff; align-self: flex-end; border-bottom-right-radius: 4px; animation-delay: 0.4s;}
-        
-        .makc-msg-meta { display: inline-flex; align-items: center; gap: 4px; margin-left: 10px; font-size: 0.65rem; opacity: 0.7; transform: translateY(2px);}
-        .makc-checks { color: #80cfff; font-weight: bold; letter-spacing: -2px;}
-
-        .makc-input-wrapper { padding: 15px 20px; }
-        .makc-input-box { background: #1a1d21; border-radius: 24px; padding: 10px 15px; display: flex; align-items: center; gap: 15px;}
-        .makc-input-box svg { color: #888; cursor: pointer;}
-        .makc-input-text { flex: 1; color: #888; font-size: 0.9rem; }
-        .makc-send-btn { width: 36px; height: 36px; background: #0088cc; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; cursor: pointer; box-shadow: 0 4px 10px rgba(0, 136, 204, 0.4);}
-
-        @media (max-width: 768px) {
-            .hero-mockup-container { display: none; }
-        }
+        .mockup-app-window:hover { transform: rotateX(0deg) translateY(-15px); box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.9), 0 0 80px rgba(99, 102, 241, 0.3); }
+        .app-topbar { height: 38px; background: #0a0b0e; display: flex; align-items: center; padding: 0 16px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .app-dots { display: flex; gap: 8px; }
+        .app-dot { width: 12px; height: 12px; border-radius: 50%; }
+        .app-dot.r { background: #ff5f56; } .app-dot.y { background: #ffbd2e; } .app-dot.g { background: #27c93f; }
+        .app-title { margin: 0 auto; color: #666; font-size: 0.75rem; font-weight: 600; transform: translateX(-24px); }
+        .app-body { display: flex; flex: 1; overflow: hidden; }
+        .app-nav { width: 70px; background: #0a0b0e; border-right: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; align-items: center; padding: 20px 0; gap: 25px; }
+        .nav-avatar { width: 44px; height: 44px; border-radius: 14px; background: linear-gradient(135deg, var(--accent), #8b5cf6); display: flex; align-items: center; justify-content: center; font-weight: 700; color: white; font-size: 1.1rem; }
+        .nav-icon { width: 26px; height: 26px; color: #555; cursor: pointer; transition: 0.2s; }
+        .nav-icon.active { color: var(--accent); } .nav-icon:hover:not(.active) { color: #888; }
+        .app-sidebar { width: 320px; background: #13141a; border-right: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column; }
+        .sidebar-header { padding: 20px 20px 10px; }
+        .search-box { background: #1c1e26; border: 1px solid rgba(255,255,255,0.05); border-radius: 10px; padding: 10px 14px; display: flex; align-items: center; gap: 10px; color: #666; font-size: 0.9rem; }
+        .stories-container { display: flex; gap: 12px; padding: 10px 20px 15px; border-bottom: 1px solid rgba(255,255,255,0.02); }
+        .story-item { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+        .story-ring { width: 54px; height: 54px; border-radius: 50%; padding: 2px; background: linear-gradient(45deg, #ec4899, #8b5cf6); }
+        .story-avatar { width: 100%; height: 100%; border-radius: 50%; background: #222; border: 2px solid #13141a; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white;}
+        .story-name { font-size: 0.7rem; color: #888; }
+        .chat-list { flex: 1; padding: 10px; display: flex; flex-direction: column; gap: 4px; }
+        .chat-item { display: flex; gap: 14px; padding: 12px; border-radius: 12px; cursor: pointer; }
+        .chat-item.active { background: rgba(99, 102, 241, 0.1); position: relative; }
+        .chat-item.active::before { content: ''; position: absolute; left: 0; top: 15%; height: 70%; width: 4px; background: var(--accent); border-radius: 0 4px 4px 0; }
+        .chat-avatar { width: 48px; height: 48px; border-radius: 50%; background: #333; display: flex; align-items: center; justify-content: center; font-weight: 600; color: white; position: relative;}
+        .online-dot { position: absolute; bottom: 0; right: 0; width: 12px; height: 12px; background: #10b981; border: 3px solid #13141a; border-radius: 50%; }
+        .chat-info { flex: 1; display: flex; flex-direction: column; justify-content: center; min-width: 0; }
+        .chat-top { display: flex; justify-content: space-between; margin-bottom: 4px; }
+        .chat-name { font-weight: 600; font-size: 0.95rem; color: #fff; }
+        .chat-time { font-size: 0.75rem; color: #666; }
+        .chat-bottom { display: flex; justify-content: space-between; }
+        .chat-msg { font-size: 0.85rem; color: #888; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .chat-badge { background: var(--accent); color: white; font-size: 0.7rem; font-weight: bold; padding: 2px 8px; border-radius: 12px; }
+        .app-main { flex: 1; display: flex; flex-direction: column; background: #0f1115; position: relative; }
+        .chat-header { padding: 15px 25px; border-bottom: 1px solid rgba(255,255,255,0.05); display: flex; justify-content: space-between; align-items: center; }
+        .header-user { display: flex; align-items: center; gap: 15px; }
+        .header-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, #3b82f6, #06b6d4); display: flex; align-items: center; justify-content: center; font-weight: bold;}
+        .header-name { font-size: 1.05rem; font-weight: 600; color: #fff; }
+        .header-status { font-size: 0.8rem; color: #10b981; }
+        .header-actions { display: flex; gap: 20px; color: #888; }
+        .chat-messages { flex: 1; padding: 25px; display: flex; flex-direction: column; gap: 16px; justify-content: flex-end; }
+        .msg { max-width: 65%; display: flex; flex-direction: column; animation: floatIn 0.3s ease-out forwards; opacity: 0; transform: translateY(10px); }
+        .msg.left { align-self: flex-start; } .msg.right { align-self: flex-end; }
+        .msg-bubble { padding: 12px 18px; font-size: 0.95rem; line-height: 1.5; }
+        .msg.left .msg-bubble { background: #1c1e26; color: #e2e8f0; border-radius: 16px 16px 16px 4px; border: 1px solid rgba(255,255,255,0.03); }
+        .msg.right .msg-bubble { background: linear-gradient(135deg, var(--accent), #8b5cf6); color: #fff; border-radius: 16px 16px 4px 16px; }
+        .msg-info { display: flex; align-items: center; gap: 6px; align-self: flex-end; margin-top: 4px; font-size: 0.7rem; color: #666; }
+        .ai-notice { align-self: center; display: flex; align-items: center; gap: 10px; background: rgba(236, 72, 153, 0.1); border: 1px solid rgba(236, 72, 153, 0.3); padding: 8px 16px; border-radius: 20px; font-size: 0.8rem; color: #fbcfe8; animation: floatIn 0.3s ease-out forwards; animation-delay: 0.6s; opacity: 0; }
+        .chat-input-area { padding: 20px 25px; background: #0f1115; border-top: 1px solid rgba(255,255,255,0.02);}
+        .input-wrapper { background: #1c1e26; border: 1px solid rgba(255,255,255,0.05); border-radius: 24px; display: flex; align-items: center; padding: 8px 8px 8px 20px; gap: 15px; }
+        .input-text { flex: 1; font-size: 0.95rem; color: #fff; display: flex; align-items: center;}
+        .ai-suggestion { color: #555; display: inline-flex; align-items: center; }
+        .tab-key { background: #333; color: #aaa; font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; margin-left: 8px; font-family: monospace;}
+        .btn-send { width: 40px; height: 40px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; color: white; }
+        @keyframes floatIn { to { opacity: 1; transform: translateY(0); } }
+        @media (max-width: 900px) { .hero-mockup-container { display: none; } }
     </style>
 </head>
 <body>
@@ -563,112 +494,91 @@
         <p>High-quality voice calls, minimal message delivery latency, story support, and a built-in neural network to automate your dialogues.</p>
         <a href="#download" class="btn" style="padding: 16px 36px; font-size: 1.2rem;">Get Started</a>
         <div class="hero-mockup-container reveal">
-            <div class="mockup-window">
-                <div class="mockup-header-win">
-                    <div>MAKC Messenger</div>
-                    <div class="win-controls">
-                        <span>—</span>
-                        <span>□</span>
-                        <span>✕</span>
-                    </div>
+            <div class="mockup-app-window">
+                <div class="app-topbar">
+                    <div class="app-dots"><div class="app-dot r"></div><div class="app-dot y"></div><div class="app-dot g"></div></div>
+                    <div class="app-title">MAKC Desktop (Encrypted)</div>
                 </div>
-                
-                <div class="makc-app-body">
-                    <div class="makc-nav-bar">
-                        <div class="makc-nav-avatar">D</div>
-                        <svg class="makc-nav-icon active" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                        <svg class="makc-nav-icon" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-                        <svg class="makc-nav-icon" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
-                        <div style="flex:1"></div>
-                        <svg class="makc-nav-icon" viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.06-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.56-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.06.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .43-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.49-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+                <div class="app-body">
+                    <div class="app-nav">
+                        <div class="nav-avatar">D</div>
+                        <svg class="nav-icon active" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/></svg>
+                        <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.06-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.56-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.06.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .43-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.49-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
                     </div>
-                    <div class="makc-sidebar">
-                        <div class="makc-stories-header">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                            Stories
-                        </div>
-                        <div class="makc-stories-list">
-                            <div class="makc-story-item"><div class="makc-story-ring"><div class="makc-story-inner" style="background:#8b5cf6">M</div></div><span class="makc-story-name">Arman</span></div>
-                            <div class="makc-story-item"><div class="makc-story-ring"><div class="makc-story-inner" style="background:#f97316">A</div></div><span class="makc-story-name">Arman</span></div>
-                            <div class="makc-story-item"><div class="makc-story-ring"><div class="makc-story-inner" style="background:#10b981">R</div></div><span class="makc-story-name">Ramin</span></div>
-                            <div class="makc-story-item"><div class="makc-story-ring" style="border-color:#4a5568"><div class="makc-story-inner" style="background:#0ea5e9">D</div></div><span class="makc-story-name">Duxica</span></div>
-                        </div>
 
-                        <div class="makc-chats-header">
-                            Personal <span class="makc-badge">99+</span>
+                    <!-- Сайдбар -->
+                    <div class="app-sidebar">
+                        <div class="sidebar-header">
+                            <div class="search-box">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                                Search in MAKC...
+                            </div>
                         </div>
-                        <div class="makc-search-bar">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                            Search Chat
+                        <div class="stories-container">
+                            <div class="story-item"><div class="story-ring"><div class="story-avatar">A</div></div><span class="story-name">Alex</span></div>
+                            <div class="story-item"><div class="story-ring"><div class="story-avatar" style="background: #0ea5e9">M</div></div><span class="story-name">Max</span></div>
+                            <div class="story-item"><div class="story-ring"><div class="story-avatar" style="background: #10b981">E</div></div><span class="story-name">Elon</span></div>
+                            <div class="story-item"><div class="story-ring" style="background: rgba(255,255,255,0.1)"><div class="story-avatar" style="background: #444">S</div></div><span class="story-name">Sarah</span></div>
                         </div>
-
-                        <div class="makc-chat-list">
-                            <div class="makc-chat-item">
-                                <div class="makc-chat-avatar" style="background:#ec4899">F</div>
-                                <div class="makc-chat-info">
-                                    <div class="makc-chat-top"><span class="makc-chat-name">FrigusVacuum</span><span class="makc-chat-time">00:33</span></div>
-                                    <div class="makc-chat-msg">gax</div>
+                        <div class="chat-list">
+                            <div class="chat-item">
+                                <div class="chat-avatar" style="background: linear-gradient(135deg, #f43f5e, #fb923c)">C</div>
+                                <div class="chat-info">
+                                    <div class="chat-top"><span class="chat-name">Core Team</span><span class="chat-time">10:42 AM</span></div>
+                                    <div class="chat-bottom"><span class="chat-msg" style="color: var(--accent);">Alex is typing...</span><span class="chat-badge">3</span></div>
                                 </div>
                             </div>
-                            <div class="makc-chat-item active">
-                                <div class="makc-chat-avatar" style="background:#0ea5e9">A</div>
-                                <div class="makc-chat-info">
-                                    <div class="makc-chat-top"><span class="makc-chat-name" style="color:#0ea5e9">asdsadsadadasdasd</span><span class="makc-chat-time">22:27</span></div>
-                                    <div class="makc-chat-msg">Я ЗВОНЮ</div>
+                            <div class="chat-item active">
+                                <div class="chat-avatar" style="background: linear-gradient(135deg, #3b82f6, #06b6d4)">F<div class="online-dot"></div></div>
+                                <div class="chat-info">
+                                    <div class="chat-top"><span class="chat-name" style="color:#60a5fa">FrigusVacuum</span><span class="chat-time">Just now</span></div>
+                                    <div class="chat-bottom"><span class="chat-msg">Deployment is ready.</span></div>
                                 </div>
                             </div>
-                            <div class="makc-chat-item">
-                                <div class="makc-chat-avatar" style="background:#22c55e">D</div>
-                                <div class="makc-chat-info">
-                                    <div class="makc-chat-top"><span class="makc-chat-name">DAA</span><span class="makc-chat-time">21:53</span></div>
-                                    <div class="makc-chat-msg">алл</div>
+                            <div class="chat-item">
+                                <div class="chat-avatar" style="background: linear-gradient(135deg, #10b981, #059669)">D</div>
+                                <div class="chat-info">
+                                    <div class="chat-top"><span class="chat-name">Design Sync</span><span class="chat-time">Yesterday</span></div>
+                                    <div class="chat-bottom"><span class="chat-msg">Mockups look awesome!</span></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Основной чат -->
-                    <div class="makc-chat-main">
-                        <div class="makc-chat-header-main">
-                            <div class="makc-chat-user">
-                                <div class="makc-chat-avatar" style="background:#0ea5e9; width: 36px; height: 36px;">A</div>
-                                <div class="makc-chat-user-info">
-                                    <h3>asdsadsadadasdasd</h3>
-                                    <p>last seen today at 00:02</p>
-                                </div>
+                    <div class="app-main">
+                        <div class="chat-header">
+                            <div class="header-user">
+                                <div class="header-avatar">F</div>
+                                <div><div class="header-name">FrigusVacuum</div><div class="header-status">online</div></div>
                             </div>
-                            <div class="makc-chat-actions">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
+                            <div class="header-actions">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="12" cy="5" r="1"/><circle cx="12" cy="19" r="1"/></svg>
                             </div>
                         </div>
-
-                        <div class="makc-messages-area">
-                            <div class="makc-msg-bubble left">
-                                ты тут? <span class="makc-msg-meta">22:27</span>
+                        <div class="chat-messages">
+                            <div class="msg left">
+                                <div class="msg-bubble">Hey! Did you check the new offline-first architecture? The SQLite sync is insane.</div>
+                                <div class="msg-info">10:41 AM</div>
                             </div>
-                            <div class="makc-msg-bubble left">
-                                f;;f <span class="makc-msg-meta">22:27</span>
+                            <div class="msg right" style="animation-delay: 0.2s">
+                                <div class="msg-bubble">Yeah, testing it right now. Zero latency when dropping the network connection.</div>
+                                <div class="msg-info">10:42 AM <span style="color:#4ade80; font-weight:bold; letter-spacing:-2px">✓✓</span></div>
                             </div>
-                            <div class="makc-msg-bubble right">
-                                не спамь 
-                                <span class="makc-msg-meta">22:27 <span class="makc-checks">✓✓</span></span>
+                            <div class="ai-notice">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                                AI Smart Summary: Offline DB testing successful, zero latency confirmed.
                             </div>
-                            <div class="makc-msg-bubble right" style="animation-delay: 0.8s">
-                                Я ЗВОНЮ
-                                <span class="makc-msg-meta">22:27 <span class="makc-checks">✓✓</span></span>
+                            <div class="msg left" style="animation-delay: 0.8s">
+                                <div class="msg-bubble">Absolutely, deployment is ready.</div>
+                                <div class="msg-info">Just now</div>
                             </div>
                         </div>
-
-                        <div class="makc-input-wrapper">
-                            <div class="makc-input-box">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
-                                <span class="makc-input-text">Message...</span>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-                                <div class="makc-send-btn">
-                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transform: translateX(-1px); color: white;"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-                                </div>
+                        <div class="chat-input-area">
+                            <div class="input-wrapper">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg>
+                                <div class="input-text">Sounds great, <span class="ai-suggestion">I will run the build now. <span class="tab-key">TAB</span></span></div>
+                                <div class="btn-send"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="transform: translateX(-1px);"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg></div>
                             </div>
                         </div>
                     </div>
