@@ -396,6 +396,163 @@
             nav { display: none; }
             .tech-grid { grid-template-columns: 1fr; }
         }
+        /* ================= MOCKUP UI ================= */
+        .hero-mockup-container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 40px auto 0;
+            perspective: 1000px;
+            z-index: 10;
+        }
+
+        .mockup-window {
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid var(--accent);
+            border-radius: 16px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 40px rgba(99, 102, 241, 0.3);
+            backdrop-filter: blur(20px);
+            overflow: hidden;
+            transform: rotateX(8deg) translateY(0);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            display: flex;
+            flex-direction: column;
+            height: 500px;
+        }
+
+        .mockup-window:hover {
+            transform: rotateX(0deg) translateY(-10px);
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.6), 0 0 60px rgba(99, 102, 241, 0.5);
+        }
+
+        .mockup-header {
+            height: 30px;
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            gap: 8px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .mac-dot { width: 12px; height: 12px; border-radius: 50%; }
+        .mac-dot.red { background: #ff5f56; }
+        .mac-dot.yellow { background: #ffbd2e; }
+        .mac-dot.green { background: #27c93f; }
+
+        .mockup-body {
+            display: grid;
+            grid-template-columns: 250px 1fr 250px;
+            height: 100%;
+        }
+
+        .mockup-sidebar { background: rgba(0, 0, 0, 0.2); border-right: 1px solid var(--border); padding: 15px; }
+        .mockup-chat { padding: 20px; display: flex; flex-direction: column; justify-content: flex-end; gap: 15px; background: radial-gradient(circle at center, rgba(99,102,241,0.05) 0%, transparent 100%);}
+        .mockup-ai-panel { background: rgba(0, 0, 0, 0.2); border-left: 1px solid var(--border); padding: 15px; }
+
+        .mockup-chat-bubble {
+            max-width: 70%;
+            padding: 12px 18px;
+            border-radius: 18px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            animation: floatIn 0.5s ease-out forwards;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        
+        .bubble-left { background: rgba(255, 255, 255, 0.05); align-self: flex-start; border-bottom-left-radius: 4px; animation-delay: 0.2s;}
+        .bubble-right { background: linear-gradient(135deg, var(--accent), #8b5cf6); color: white; align-self: flex-end; border-bottom-right-radius: 4px; animation-delay: 0.6s;}
+        .bubble-ai { background: rgba(236, 72, 153, 0.15); border: 1px solid var(--secondary); align-self: flex-start; border-bottom-left-radius: 4px; box-shadow: 0 0 15px rgba(236, 72, 153, 0.2); animation-delay: 1.2s;}
+
+        .mockup-input {
+            height: 45px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border);
+            border-radius: 25px;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .mockup-contact { height: 40px; background: rgba(255,255,255,0.05); border-radius: 8px; margin-bottom: 10px; display: flex; align-items: center; padding: 0 10px; gap: 10px;}
+        .mockup-avatar { width: 24px; height: 24px; border-radius: 50%; background: var(--border); }
+        .mockup-contact.active { background: rgba(99, 102, 241, 0.2); border: 1px solid rgba(99, 102, 241, 0.3); }
+
+        @keyframes floatIn { to { opacity: 1; transform: translateY(0); } }
+
+        @media (max-width: 768px) {
+            .mockup-body { grid-template-columns: 1fr; }
+            .mockup-sidebar, .mockup-ai-panel { display: none; }
+            .hero-mockup-container { display: none; /* Прячем на мобилках чтоб не ломать верстку */ }
+        }
+
+        /* ================= COMPARISON TABLE ================= */
+        .comparison-section {
+            padding: 80px 20px;
+            background: linear-gradient(to bottom, transparent, rgba(15, 23, 42, 0.3), transparent);
+        }
+
+        .table-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            overflow-x: auto;
+        }
+
+        .compare-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            margin-top: 40px;
+        }
+
+        .compare-table th, .compare-table td {
+            padding: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .compare-table th {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .compare-table .col-makc {
+            background: rgba(99, 102, 241, 0.1);
+            border-left: 2px solid var(--accent);
+            border-right: 2px solid var(--accent);
+            color: white;
+            font-weight: bold;
+        }
+        
+        .compare-table th.col-makc {
+            background: var(--accent);
+            color: white;
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+            text-align: center;
+            font-size: 1.4rem;
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+            border: none;
+        }
+
+        .compare-table tr:last-child .col-makc {
+            border-bottom: 2px solid var(--accent);
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+        }
+
+        .compare-table td:first-child { font-weight: 600; color: #fff; width: 30%; }
+
+        .icon-check { color: #4ade80; display: inline-flex; align-items: center; gap: 8px; }
+        .icon-cross { color: #f87171; display: inline-flex; align-items: center; gap: 8px; opacity: 0.7;}
+        .icon-warn { color: #fbbf24; display: inline-flex; align-items: center; gap: 8px; opacity: 0.9;}
+
+        .compare-table svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round;}
     </style>
 </head>
 <body>
@@ -429,7 +586,51 @@
         </div>
         <p>High-quality voice calls, minimal message delivery latency, story support, and a built-in neural network to automate your dialogues.</p>
         <a href="#download" class="btn" style="padding: 16px 36px; font-size: 1.2rem;">Get Started</a>
-
+        <div class="hero-mockup-container reveal">
+            <div class="mockup-window">
+                <div class="mockup-header">
+                    <div class="mac-dot red"></div>
+                    <div class="mac-dot yellow"></div>
+                    <div class="mac-dot green"></div>
+                    <div style="margin-left:auto; font-size: 0.75rem; color: #a1a1aa; font-family: monospace;">makc_core_v2.exe (Online)</div>
+                </div>
+                <div class="mockup-body">
+                    <div class="mockup-sidebar">
+                        <div class="mockup-input" style="margin-top:0; height:35px; margin-bottom: 20px;">Search...</div>
+                        <div class="mockup-contact active"><div class="mockup-avatar" style="background: #ec4899;"></div> <span style="font-size:0.85rem">Elon Musk</span></div>
+                        <div class="mockup-contact"><div class="mockup-avatar"></div> <span style="font-size:0.85rem">Work Group</span></div>
+                        <div class="mockup-contact"><div class="mockup-avatar"></div> <span style="font-size:0.85rem">Design Team</span></div>
+                    </div>
+                    <div class="mockup-chat">
+                        <div class="mockup-chat-bubble bubble-left">
+                            Did you finish the new architecture? The investors are asking.
+                        </div>
+                        <div class="mockup-chat-bubble bubble-right">
+                            Yeah, compiled flawlessly. Offline-First via SQLite + SignalR on the backend. Zero latency.
+                        </div>
+                        <div class="mockup-chat-bubble bubble-ai">
+                            <strong>MAKC AI:</strong> Я подготовил краткую выжимку по архитектуре для инвесторов и добавил её в ваши заметки. Отправить Илону?
+                        </div>
+                        <div class="mockup-input">
+                            <span style="opacity: 0.5">Type a message or use /ai...</span>
+                            <div style="margin-left:auto; color: var(--accent);">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mockup-ai-panel">
+                        <div style="font-size: 0.85rem; font-weight: bold; margin-bottom: 15px; color: var(--accent);">Neural Tasks</div>
+                        <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px; font-size: 0.75rem; margin-bottom: 10px;">
+                            <span style="color:#4ade80;">● Active</span> Auto-reply to clients
+                        </div>
+                        <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px; font-size: 0.75rem;">
+                            <span style="color:#fbbf24;">● Pending</span> Generate week report
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <div class="metrics reveal">
             <div class="metric-item">
                 <div class="metric-value">40<span style="font-size: 1.5rem">ms</span></div>
@@ -511,7 +712,66 @@
 
         </div>
     </section>
+<!-- SECTION: COMPARISON (AGGRESSIVE MARKETING) -->
+    <section class="comparison-section">
+        <div class="container" style="padding-top: 0; padding-bottom: 0;">
+            <h2 class="section-title reveal">Почему MAKC <span>уничтожает</span> конкурентов</h2>
+            <p class="reveal" style="text-align: center; color: var(--text-muted); max-width: 800px; margin: 0 auto;">
+                Мы не пытались сделать "еще один мессенджер". Мы переписали правила игры с нуля. Взгляните на факты.
+            </p>
 
+            <div class="table-container reveal">
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th>Функция</th>
+                            <th class="col-makc">MAKC</th>
+                            <th>Telegram</th>
+                            <th>Discord</th>
+                            <th>WhatsApp</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Задержка доставки (Latency)</td>
+                            <td class="col-makc"><span class="icon-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> ~40мс (Мгновенно)</span></td>
+                            <td><span class="icon-warn">~200-500мс</span></td>
+                            <td><span class="icon-warn">Ест всю ОЗУ пока думает</span></td>
+                            <td><span class="icon-cross">"Ждем сеть..."</span></td>
+                        </tr>
+                        <tr>
+                            <td>ИИ-Клон для автоответов</td>
+                            <td class="col-makc"><span class="icon-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Встроен в ядро</span></td>
+                            <td><span class="icon-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Пишите ботов сами</span></td>
+                            <td><span class="icon-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Только тупые боты</span></td>
+                            <td><span class="icon-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Что такое ИИ?</span></td>
+                        </tr>
+                        <tr>
+                            <td>Оффлайн доступ к базе</td>
+                            <td class="col-makc"><span class="icon-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Полный (SQLite WAL)</span></td>
+                            <td><span class="icon-warn">Кэш слетает</span></td>
+                            <td><span class="icon-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Без интернета — смерть</span></td>
+                            <td><span class="icon-warn">Зависит от телефона</span></td>
+                        </tr>
+                        <tr>
+                            <td>Кастомизация UI</td>
+                            <td class="col-makc"><span class="icon-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> 100% Core Level</span></td>
+                            <td><span class="icon-warn">Темы по подписке Premium</span></td>
+                            <td><span class="icon-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Цвета Nitro Only</span></td>
+                            <td><span class="icon-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Зеленый или темно-зеленый</span></td>
+                        </tr>
+                        <tr>
+                            <td>Smart T9 (Анализ контекста)</td>
+                            <td class="col-makc"><span class="icon-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Дописывает за вас</span></td>
+                            <td><span class="icon-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Нет</span></td>
+                            <td><span class="icon-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Нет</span></td>
+                            <td><span class="icon-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Стандартный iOS/Android</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
     <!-- SECTION: TECH STACK & ARCHITECTURE -->
     <section class="tech-stack" id="tech">
         <div class="container" style="padding-top: 0; padding-bottom: 0;">
