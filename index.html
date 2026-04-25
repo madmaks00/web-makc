@@ -748,19 +748,45 @@
 
         </div>
     </section>
-<!-- SECTION: COMPARISON (AGGRESSIVE MARKETING) -->
+    <!-- SECTION: COMPARISON (AGGRESSIVE MARKETING) -->
+    <style>
+        /* Убираем горизонтальный скролл: превращаем таблицу в карточки на телефонах */
+        @media (max-width: 768px) {
+            .table-container { overflow-x: visible !important; }
+            .compare-table thead { display: none; }
+            .compare-table, .compare-table tbody, .compare-table tr, .compare-table td { display: block; width: 100%; }
+            .compare-table tr { margin-bottom: 25px; background: rgba(15, 23, 42, 0.4); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; }
+            .compare-table td { display: flex; justify-content: space-between; align-items: center; text-align: right; padding: 14px 15px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+            .compare-table td:last-child { border-bottom: none; }
+            
+            /* Подставляем названия колонок слева */
+            .compare-table td::before { 
+                content: attr(data-label); font-weight: 700; color: var(--text-muted); 
+                text-transform: uppercase; font-size: 0.75rem; text-align: left; flex-shrink: 0; margin-right: 15px; 
+            }
+            
+            /* Главный заголовок функции */
+            .compare-table td:first-child { background: rgba(255,255,255,0.02); justify-content: center; font-size: 1.05rem; color: #fff; padding: 15px; }
+            .compare-table td:first-child::before { display: none; }
+            
+            /* Стили для колонки MAKC на мобилках */
+            .compare-table .col-makc { background: rgba(99, 102, 241, 0.15); border: none; }
+            .compare-table td span { display: inline-flex; align-items: center; justify-content: flex-end; text-align: right; }
+        }
+    </style>
+
     <section class="comparison-section">
         <div class="container" style="padding-top: 0; padding-bottom: 0;">
-            <h2 class="section-title reveal">Почему MAKC <span>уничтожает</span> конкурентов</h2>
+            <h2 class="section-title reveal">Why MAKC <span>crushes</span> the competition</h2>
             <p class="reveal" style="text-align: center; color: var(--text-muted); max-width: 800px; margin: 0 auto;">
-                Мы не пытались сделать "еще один мессенджер". Мы переписали правила игры с нуля. Взгляните на факты.
+                We didn't just build "another messenger". We rewrote the rules from scratch. Look at the facts.
             </p>
 
             <div class="table-container reveal">
                 <table class="compare-table">
                     <thead>
                         <tr>
-                            <th>Функция</th>
+                            <th>Feature</th>
                             <th class="col-makc">MAKC</th>
                             <th>Telegram</th>
                             <th>Discord</th>
@@ -769,39 +795,39 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Задержка доставки (Latency)</td>
-                            <td class="col-makc"><span class="icon-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> ~40мс (Мгновенно)</span></td>
-                            <td><span class="icon-warn">~200-500мс</span></td>
-                            <td><span class="icon-warn">Ест всю ОЗУ пока думает</span></td>
-                            <td><span class="icon-cross">"Ждем сеть..."</span></td>
+                            <td data-label="Feature">Delivery Latency</td>
+                            <td class="col-makc" data-label="MAKC"><span class="icon-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> ~40ms (Instant)</span></td>
+                            <td data-label="Telegram"><span class="icon-warn">~200-500ms</span></td>
+                            <td data-label="Discord"><span class="icon-warn">Eats all RAM</span></td>
+                            <td data-label="WhatsApp"><span class="icon-cross">"Waiting for network..."</span></td>
                         </tr>
                         <tr>
-                            <td>ИИ-Клон для автоответов</td>
-                            <td class="col-makc"><span class="icon-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Встроен в ядро</span></td>
-                            <td><span class="icon-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Пишите ботов сами</span></td>
-                            <td><span class="icon-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Только тупые боты</span></td>
-                            <td><span class="icon-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Что такое ИИ?</span></td>
+                            <td data-label="Feature">AI Auto-Replies</td>
+                            <td class="col-makc" data-label="MAKC"><span class="icon-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Built into core</span></td>
+                            <td data-label="Telegram"><span class="icon-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Write bots yourself</span></td>
+                            <td data-label="Discord"><span class="icon-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Dumb scripts only</span></td>
+                            <td data-label="WhatsApp"><span class="icon-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> What is AI?</span></td>
                         </tr>
                         <tr>
-                            <td>Оффлайн доступ к базе</td>
-                            <td class="col-makc"><span class="icon-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Полный (SQLite WAL)</span></td>
-                            <td><span class="icon-warn">Кэш слетает</span></td>
-                            <td><span class="icon-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Без интернета — смерть</span></td>
-                            <td><span class="icon-warn">Зависит от телефона</span></td>
+                            <td data-label="Feature">Offline Database</td>
+                            <td class="col-makc" data-label="MAKC"><span class="icon-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Full (SQLite WAL)</span></td>
+                            <td data-label="Telegram"><span class="icon-warn">Cache wipes out</span></td>
+                            <td data-label="Discord"><span class="icon-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Dead without internet</span></td>
+                            <td data-label="WhatsApp"><span class="icon-warn">Depends on phone</span></td>
                         </tr>
                         <tr>
-                            <td>Кастомизация UI</td>
-                            <td class="col-makc"><span class="icon-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> 100% Core Level</span></td>
-                            <td><span class="icon-warn">Темы по подписке Premium</span></td>
-                            <td><span class="icon-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Цвета Nitro Only</span></td>
-                            <td><span class="icon-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Зеленый или темно-зеленый</span></td>
+                            <td data-label="Feature">UI Customization</td>
+                            <td class="col-makc" data-label="MAKC"><span class="icon-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> 100% Core Level</span></td>
+                            <td data-label="Telegram"><span class="icon-warn">Premium Themes</span></td>
+                            <td data-label="Discord"><span class="icon-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Colors Nitro Only</span></td>
+                            <td data-label="WhatsApp"><span class="icon-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Green or dark green</span></td>
                         </tr>
                         <tr>
-                            <td>Smart T9 (Анализ контекста)</td>
-                            <td class="col-makc"><span class="icon-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Дописывает за вас</span></td>
-                            <td><span class="icon-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Нет</span></td>
-                            <td><span class="icon-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Нет</span></td>
-                            <td><span class="icon-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Стандартный iOS/Android</span></td>
+                            <td data-label="Feature">Smart T9 Context</td>
+                            <td class="col-makc" data-label="MAKC"><span class="icon-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Autocompletes for you</span></td>
+                            <td data-label="Telegram"><span class="icon-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> None</span></td>
+                            <td data-label="Discord"><span class="icon-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> None</span></td>
+                            <td data-label="WhatsApp"><span class="icon-cross"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Standard iOS/Android</span></td>
                         </tr>
                     </tbody>
                 </table>
